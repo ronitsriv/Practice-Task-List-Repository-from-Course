@@ -1,4 +1,4 @@
-package com.in28minutes.maybefirstwebapp.todo;
+package com.in28minutes.rest.webservices.restfulgetitwebservice.todo;
 
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
@@ -14,6 +14,7 @@ public class TodoService {
 
     private static int todosCount = 0;
     static {
+
         todos.add(new Todo(++todosCount, "in28minutes", "Learn AWS 1",
                 LocalDate.now().plusYears(1), false));
         todos.add(new Todo(++todosCount, "in28minutes", "Learn Spring 1",
@@ -28,9 +29,10 @@ public class TodoService {
         return todos;
     }
 
-    public void addTodo(String username, String description, LocalDate targetDate, boolean done){
+    public Todo addTodo(String username, String description, LocalDate targetDate, boolean done){
         Todo todo = new Todo(++todosCount, username, description, targetDate, done);
         todos.add(todo);
+        return todo;
     }
     
     public void deleteById(int id){

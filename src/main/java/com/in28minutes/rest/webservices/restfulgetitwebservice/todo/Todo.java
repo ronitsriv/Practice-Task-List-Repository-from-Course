@@ -1,4 +1,4 @@
-package com.in28minutes.maybefirstwebapp.todo;
+package com.in28minutes.rest.webservices.restfulgetitwebservice.todo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
